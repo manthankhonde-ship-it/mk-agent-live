@@ -3,7 +3,7 @@ import json
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings, HuggingFaceInferenceAPIEmbeddings
 from typing import TypedDict
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
@@ -27,7 +27,10 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 resume_chunks = text_splitter.create_documents(raw_text_list)
 
-embedding = HuggingFaceEmbeddings(model_name = "all-MiniLM-L6-v2" )
+embedding = HuggingFaceInferenceAPIEmbeddings(
+    api_key=os.environ.get("HF_TOKEN"),
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
 
 vector_db = FAISS.from_documents(documents=resume_chunks, embedding=embedding)
 print("Vector database created successfully!")
