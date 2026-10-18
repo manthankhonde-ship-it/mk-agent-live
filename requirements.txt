@@ -6,4 +6,4 @@ langchain
 langchain-groq
 langchain-community
 python-dotenv
-langchain-huggingface
+fastembed
