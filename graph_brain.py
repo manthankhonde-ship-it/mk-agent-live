@@ -41,7 +41,7 @@ class GraphState(TypedDict):
     context: str
     answer : str
 
-llm = ChatGroq(model_name="qwen/qwen3.8-27b", temperature=0)
+llm = ChatGroq(model_name="llama3-8b-8192", temperature=0, max_tokens=800)
 
 def router_node(state: GraphState):
     question = state["question"]
