@@ -9,6 +9,7 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import StateGraph, START, END
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 
 load_dotenv()
 
@@ -27,9 +28,9 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 resume_chunks = text_splitter.create_documents(raw_text_list)
 
-embedding = HuggingFaceInferenceAPIEmbeddings(
-    api_key=os.environ.get("HF_TOKEN"),
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+embedding = HuggingFaceEndpointEmbeddings(
+    huggingfacehub_api_token=os.environ.get("HF_TOKEN"),
+    model="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 vector_db = FAISS.from_documents(documents=resume_chunks, embedding=embedding)
