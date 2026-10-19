@@ -649,7 +649,7 @@
         <!-- ============================================================= -->
         <!-- CHAT MESSAGES SCROLL CONTAINER                                 -->
         <!-- ============================================================= -->
-        <div id="chat-messages-container" class="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-6 scroll-smooth select-text">
+        <div id="chat-messages-container" class="flex-1 min-h-0 overflow-y-auto px-4 md:px-8 py-6 space-y-6 scroll-smooth select-text">
 
             <!-- =========================================================-->
             <!-- WELCOME / HERO STATE                                      -->
@@ -1278,7 +1278,8 @@
 
         // --- Utility Functions ---
         function scrollToBottom() {
-            messagesEnd.scrollIntoView({
+            chatContainer.scrollTo({
+                top: chatContainer.scrollHeight,
                 behavior: 'smooth'
             });
         }
