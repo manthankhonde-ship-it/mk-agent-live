@@ -36,5 +36,12 @@
         "working_in_a_team_as_a_fresher": "I am a fresher and do not want to overstate my professional team experience. In a team, I would communicate progress and blockers early, keep my code understandable, document important decisions, and ask for feedback when I am unsure. I am open to learning the team's workflow and contributing reliably.",
         "strength": "One of my strengths is persistence in learning and debugging. When something does not work, I break the problem into smaller parts, inspect the error, and test a focused fix. Building AI projects has also helped me become more comfortable learning unfamiliar tools through practical work.",
         "area_for_improvement": "As a fresher, I am still developing my professional software-development experience, especially working within an established team's processes and codebase. I am addressing this by building projects, practicing clear documentation, and staying open to code review and feedback."
+    },
+
+    "Project - MK-Agent (AI Digital Twin)": {
+        "Role": "Full Stack AI Engineer",
+        "Tech Stack": "Python, FastAPI, LangGraph, FAISS (Vector DB), Groq API, Tailwind CSS, JavaScript",
+        "Description": "Developed a real-time, interactive AI replica of my professional profile using Agentic RAG.",
+        "Key Features": "Architected a highly scalable RAG pipeline using LangGraph and FAISS. Built a custom 'Claude-style' minimalist UI from scratch. Handled CORS, asynchronous API fetching, and memory optimization for smooth deployment on Render."
     }
 }
