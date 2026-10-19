@@ -41,7 +41,13 @@ class GraphState(TypedDict):
     context: str
     answer : str
 
-llm = ChatGroq(model_name="mixtral-8x7b-32768", temperature=0, max_tokens=800)
+import os
+
+llm = ChatGroq(
+    model_name=os.getenv("GROQ_MODEL", "mixtral-8x7b-32768"), 
+    temperature=0.2,
+    max_tokens=800
+)
 
 def router_node(state: GraphState):
     question = state["question"]
